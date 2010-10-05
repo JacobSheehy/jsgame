@@ -6,7 +6,7 @@
     jsgame.print("Hello, world");
     tx = Math.floor(randomInt(4, 300));
     ty = Math.floor(randomInt(4, 300));
-    jsgame.printText("Yo dawg", tx, ty);
+    jsgame.printText("Hello, world", tx, ty);
   };
 
   randomInt = function (min, max) {
@@ -14,7 +14,7 @@
   };
 
   opts = {
-    framerate : 2
+    framerate : 10
   };
 
   jsgame.init("burrito", loop, opts);
