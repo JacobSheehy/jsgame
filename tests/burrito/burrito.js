@@ -15,7 +15,7 @@
   };
 
   opts = {
-    framerate : 10
+    framerate : 2
   };
 
   jsgame.init("burrito", loop, opts);

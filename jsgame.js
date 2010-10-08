@@ -14,6 +14,13 @@
     var g; // main objct
     var gopts; // framerate, size={width,height} 
     var loopWrapper; // Timing 
+    var gameObj = function(type)  {
+      var x = 0;
+      var y = 0; 
+      var w = 0;
+      var h = 0;
+      var type=type;
+    };
     g = {};
     gopts = {};
     // Call the game's loop according to framerate
@@ -27,10 +34,20 @@
         nextCycle
       );
     };
+    g.buildObject = function(type) {
+      var o = new gameObj();
+      o.type=type;
+      return o;
+    };
+    g.drawObject = function(obj) {
+      if(obj.type=="rect") {
+        context.fillRect(obj.x, obj.y, obj.w, obj.h);
+      }
+    }
     g.clear = function() {
       // Clear the hidden context
       context.clearRect(0,0,gopts.size.width,gopts.size.height);
-    }
+    };
     refresh = function() {
       visibleContext.clearRect(0, 0, gopts.size.width, gopts.size.height);
       visibleContext.drawImage(canvas, 0, 0);
