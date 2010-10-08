@@ -2,6 +2,7 @@
   var loop, opts, randomInt;
 
   loop = function () {
+    jsgame.clear();
     var tx, ty;
     jsgame.print("Hello, world");
     tx = Math.floor(randomInt(4, 300));

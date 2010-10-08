@@ -27,6 +27,10 @@
         nextCycle
       );
     };
+    g.clear = function() {
+      // Clear the hidden context
+      context.clearRect(0,0,gopts.size.width,gopts.size.height);
+    }
     refresh = function() {
       visibleContext.clearRect(0, 0, gopts.size.width, gopts.size.height);
       visibleContext.drawImage(canvas, 0, 0);
