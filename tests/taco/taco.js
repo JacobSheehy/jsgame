@@ -10,27 +10,27 @@
 
   loop = function () {
     // Clear the canvas
-    jsgame.clear();
+    game.clear();
     
     // Process events
-    for(var i = 0; i<jsgame.events.length; i++) {
-      var e = jsgame.events[i].keyCode;
-      if(e==jsgame.KEYS.W) {
+    for(var i = 0; i<game.events.length; i++) {
+      var e = game.events[i].keyCode;
+      if(e==game.KEYS.W) {
         rect.y-=1;
       }
-      if(e==jsgame.KEYS.A) {
+      if(e==game.KEYS.A) {
         rect.x-=1;
       }
-      if(e==jsgame.KEYS.S) {
+      if(e==game.KEYS.S) {
         rect.y+=1;
       }
-      if(e==jsgame.KEYS.D) {
+      if(e==game.KEYS.D) {
         rect.x+=1;
       }
     }
     
     // draw my rectangle
-    jsgame.drawObject(rect);
+    game.drawObject(rect);
   };
 
   opts = {
