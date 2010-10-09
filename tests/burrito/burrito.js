@@ -1,13 +1,15 @@
 (function() {
-  var loop, opts, randomInt;
+  var loop, opts, randomInt, game;
+
+  game = jsgame();
 
   loop = function () {
-    jsgame.clear();
+    game.clear();
     var tx, ty;
-    jsgame.print("Hello, world");
+    game.print("Hello, world");
     tx = Math.floor(randomInt(4, 300));
     ty = Math.floor(randomInt(4, 300));
-    jsgame.printText("Hello, world", tx, ty);
+    game.printText("Hello, world", tx, ty);
   };
 
   randomInt = function (min, max) {
@@ -18,6 +20,6 @@
     framerate : 2
   };
 
-  jsgame.init("burrito", loop, opts);
+  game.init("burrito", loop, opts);
 }());
 

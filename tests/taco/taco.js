@@ -1,7 +1,8 @@
 (function() {
-  var loop, opts, randomInt;
+  var loop, opts, randomInt, game;
+  game = jsgame();
 
-  var rect = jsgame.buildObject("rect");
+  var rect = game.buildObject("rect");
   rect.x = 50;
   rect.y = 50;
   rect.w = 30;
@@ -36,6 +37,6 @@
     framerate : 60
   };
 
-  jsgame.init("taco", loop, opts);
+  game.init("taco", loop, opts);
 }());
 

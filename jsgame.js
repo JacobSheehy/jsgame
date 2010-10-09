@@ -149,6 +149,6 @@
       };
     };
     return g;
-  } () ;
+  };
   window.jsgame = jsgame;
 }());
