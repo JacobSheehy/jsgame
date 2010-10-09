@@ -8,13 +8,32 @@
   rect.h = 30;
 
   loop = function () {
+    // Clear the canvas
     jsgame.clear();
+    
+    // Process events
+    for(var i = 0; i<jsgame.events.length; i++) {
+      var e = jsgame.events[i].keyCode;
+      if(e==jsgame.KEYS.W) {
+        rect.y-=1;
+      }
+      if(e==jsgame.KEYS.A) {
+        rect.x-=1;
+      }
+      if(e==jsgame.KEYS.S) {
+        rect.y+=1;
+      }
+      if(e==jsgame.KEYS.D) {
+        rect.x+=1;
+      }
+    }
+    
+    // draw my rectangle
     jsgame.drawObject(rect);
-    rect.x+=2;
   };
 
   opts = {
-    framerate : 8
+    framerate : 60
   };
 
   jsgame.init("taco", loop, opts);
