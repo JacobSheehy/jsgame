@@ -7,6 +7,13 @@
   rect.y = 50;
   rect.w = 30;
   rect.h = 30;
+  rect.dir_x = 1;
+  rect.dir_y = 0;
+  rect.speed = 5;
+  rect.move = function () {
+    this.x += this.dir_x * this.speed;
+    this.y += this.dir_y * this.speed;
+  };
 
   var alive = true;
 
@@ -23,22 +30,27 @@
         var e = game.events[i].keyCode;
         var speed = 5;
         if(e === game.KEYS.W) {
-          player.y -= speed;
+          player.dir_y = -1;
+          player.dir_x = 0;
         }
         if(e === game.KEYS.A) {
-          player.x -= speed;
+          player.dir_x = -1;
+          player.dir_y = 0;
         }
         if(e === game.KEYS.S) {
-          player.y += speed;
+          player.dir_y = 1;
+          player.dir_x = 0;
         }
         if(e === game.KEYS.D) {
-          player.x += speed;
+          player.dir_x = 1;
+          player.dir_y = 0;
         }
         if (e === game.KEYS.X) {
           game.removeObject("player");
           alive = false; // don't recreate it at the beginning
         }
       }
+      player.move();
     }
   };
 
