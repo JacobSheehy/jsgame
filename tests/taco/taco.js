@@ -11,8 +11,24 @@
   rect.dir_y = 0;
   rect.speed = 5;
   rect.move = function () {
+    var size, canvas_width, canvas_height;
+    size = game.getOpt('size');
+    canvas_width = size.width;
+    canvas_height = size.height;
     this.x += this.dir_x * this.speed;
     this.y += this.dir_y * this.speed;
+
+    //make it appear on the other side
+    if (this.x > canvas_width + this.w) {
+        this.x = 0 - this.w;
+    } else if (this.x < 0 - this.w) {
+        this.x = canvas_width + this.w;
+    }
+    if (this.y > canvas_height + this.h) {
+        this.y = -this.h;
+    } else if (this.y <  0 - this.h) {
+        this.y = canvas_height + this.h;
+    }
   };
 
   var alive = true;

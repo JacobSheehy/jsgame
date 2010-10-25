@@ -28,6 +28,14 @@
     // g and gopts are objects
     g = {};
     gopts = {};
+
+    g.getOpt = function (name) {
+        if (gopts.hasOwnProperty(name) === true) {
+            return gopts[name];
+        } else {
+            return null;
+        }
+    };
     
     g.events = []; // Deliver input events
     
